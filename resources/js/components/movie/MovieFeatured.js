@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieItems from "./MovieItems";
 import axios from "../../utils/axios";
 
-function MovieFeatured({ match }) {
+function MovieFeatured() {
     const [movies, setMovies] = useState([]);
     const [featured, setFeatured] = useState({});
     const base_img_url = "https://image.tmdb.org/t/p/w500";

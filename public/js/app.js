@@ -2579,9 +2579,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function MovieFeatured(_ref) {
-  var match = _ref.match;
-
+function MovieFeatured() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       movies = _useState2[0],
