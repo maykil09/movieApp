@@ -4,33 +4,20 @@ import axios from "../../utils/axios";
 import { useLocation } from "react-router-dom";
 import request from "../../utils/request";
 
-function Movies() {
+function Movies({ match }) {
     const [movies, setMovies] = useState([]);
-
     const base_img_url = "https://image.tmdb.org/t/p/w500";
 
-    // A custom hook that builds on useLocation to parse
-    // the query string for you.
-    function useQuery() {
-        return new URLSearchParams(useLocation().search);
-    }
-
-    function urlCheck() {
-        let query = useQuery();
-        return query.get("genre");
-    }
+    let genre = match.params.genre;
 
     const filtered = Object.keys(request)
-        .filter((key) => (urlCheck() === null ? {} : urlCheck().includes(key)))
+        .filter((key) => genre.includes(key))
         .reduce((obj, key) => {
             obj[key] = request[key];
             return obj;
         }, {});
 
-    const fetchUrl =
-        urlCheck() !== null
-            ? Object.values(filtered)[0].url
-            : "/trending/all/week?api_key=7c4295b591188cbcbf41833193d9db0e&language=en-US";
+    const fetchUrl = Object.values(filtered)[0].url;
 
     useEffect(() => {
         async function fetchData() {
