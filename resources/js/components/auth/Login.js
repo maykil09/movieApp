@@ -15,7 +15,7 @@ function Login() {
     return (
         <div className="bg-white w-full lg:w-1/3 mx-auto rounded-lg lg:my-20 px-4 py-4 shadow-lg">
             <h1 className="text-gray-700 font-bold text-4xl mb-4 text-center ">
-                LOGIN
+                Login
             </h1>
             <form onSubmit={requestLogin}>
                 <input
