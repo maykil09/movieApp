@@ -7,6 +7,8 @@ module.exports = {
     variants: {
         extend: {
             padding: ["last"],
+            backgroundColor: ["active"],
+            textColor: ["responsive", "hover", "focus", "group-hover"],
         },
     },
     plugins: [require("tailwind-scrollbar-hide")],

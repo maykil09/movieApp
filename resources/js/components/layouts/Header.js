@@ -13,7 +13,10 @@ function Header() {
                         <Link to="/">Home</Link>
                     </div>
                     <div className="p-3 hover:text-white cursor-pointer">
-                        <a>Login</a>
+                        <Link to="/login">Login</Link>
+                    </div>
+                    <div className="p-3 hover:text-white cursor-pointer">
+                        <Link to="/register">Register</Link>
                     </div>
                 </div>
             </div>

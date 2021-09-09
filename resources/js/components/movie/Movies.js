@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieItems from "./MovieItems";
 import axios from "../../utils/axios";
-import { useLocation } from "react-router-dom";
 import request from "../../utils/request";
 
 function Movies({ match }) {
