@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <title>Laravel</title>
+        <title>Movie App</title>
     </head>
     <body class="bg-gray-200">
         <div id="root"></div>

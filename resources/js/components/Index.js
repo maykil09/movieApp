@@ -8,6 +8,8 @@ import MovieDetails from "./movie/movieDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import Plan from "./pages/Plan";
+import Payment from "./pages/Payment";
 
 function Index() {
     return (
@@ -16,12 +18,14 @@ function Index() {
                 <Header />
                 <Switch>
                     <Route path="/login" component={Login} />
-                    <Register path="/register" component={Register} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/plan" exact component={Plan} />
+                    <Route path="/card/details" exact component={Payment} />
                     <div>
                         <Navbar />
                         <Route path="/" exact component={MovieFeatured} />
                         <Route path="/genre/:genre" component={Movies} />
-                        <Route path="/" component={MovieDetails} />
+                        <Route path="/movie/:id" component={MovieDetails} />
                     </div>
                 </Switch>
             </Router>
