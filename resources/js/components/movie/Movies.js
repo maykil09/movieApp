@@ -27,6 +27,11 @@ function Movies({ match }) {
         }
         fetchData();
     }, [fetchUrl]);
+
+    function truncate(str, n) {
+        return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+    }
+
     return (
         <div className="lg:px-5 px-10 w-full grid lg:grid-cols-4 md:grid-cols-3 gap-10">
             {movies.map((movie) => (
@@ -34,7 +39,7 @@ function Movies({ match }) {
                     key={movie.id}
                     imgPath={`${base_img_url}${movie.poster_path}`}
                     title={movie?.title || movie?.name}
-                    description={movie.overview}
+                    description={truncate(movie.overview, 200)}
                 />
             ))}
         </div>

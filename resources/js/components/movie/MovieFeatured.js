@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieItems from "./MovieItems";
 import axios from "../../utils/axios";
 
-function MovieFeatured() {
+function MovieFeatured({ match }) {
     const [movies, setMovies] = useState([]);
     const [featured, setFeatured] = useState({});
     const base_img_url = "https://image.tmdb.org/t/p/w500";
@@ -48,8 +48,8 @@ function MovieFeatured() {
                         <h2 className="font-bold text-4xl pb-1 text-white">
                             {featured?.title || featured?.name}
                         </h2>
-                        <p className="text-sm text-white">
-                            {truncate(featured.overview)}
+                        <p className="text-sm text-white pb-6">
+                            {truncate(featured.overview, 200)}
                         </p>
                     </div>
                 </div>
