@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function Payment() {
     const [cardNumber, setCardNumber] = useState("");
     const [expMonth, setExpMonth] = useState("");
     const [expYear, setExpYear] = useState("");
     const [cvc, setCvc] = useState("");
-
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const submitPayment = () => {
+    const history = useHistory();
+
+    const submitPayment = (e) => {
         e.preventDefault();
         setIsSubmit(true);
 
@@ -19,6 +21,7 @@ function Payment() {
             cvc,
         };
         console.log(payment);
+        return history.push("/");
     };
     return (
         <div className="bg-white w-full lg:w-2/3 mx-auto rounded-lg lg:my-20 px-4 py-4 shadow-lg">
