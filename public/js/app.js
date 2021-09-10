@@ -2116,38 +2116,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.BrowserRouter, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_layouts_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-          path: "/login",
-          component: _auth_Login__WEBPACK_IMPORTED_MODULE_7__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-          path: "/register",
-          component: _auth_Register__WEBPACK_IMPORTED_MODULE_8__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-          path: "/plan",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.BrowserRouter, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_layouts_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/login",
+        component: _auth_Login__WEBPACK_IMPORTED_MODULE_7__["default"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/register",
+        component: _auth_Register__WEBPACK_IMPORTED_MODULE_8__["default"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/plan",
+        exact: true,
+        component: _pages_Plan__WEBPACK_IMPORTED_MODULE_9__["default"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/card/details",
+        exact: true,
+        component: _pages_Payment__WEBPACK_IMPORTED_MODULE_10__["default"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/movie/:id",
+        component: _movie_movieDetails__WEBPACK_IMPORTED_MODULE_6__["default"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_layouts_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          path: "/",
           exact: true,
-          component: _pages_Plan__WEBPACK_IMPORTED_MODULE_9__["default"]
+          component: _movie_MovieFeatured__WEBPACK_IMPORTED_MODULE_5__["default"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-          path: "/card/details",
-          exact: true,
-          component: _pages_Payment__WEBPACK_IMPORTED_MODULE_10__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_layouts_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-            path: "/",
-            exact: true,
-            component: _movie_MovieFeatured__WEBPACK_IMPORTED_MODULE_5__["default"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-            path: "/genre/:genre",
-            component: _movie_Movies__WEBPACK_IMPORTED_MODULE_4__["default"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-            path: "/movie/:id",
-            component: _movie_movieDetails__WEBPACK_IMPORTED_MODULE_6__["default"]
-          })]
+          path: "/genre/:genre",
+          component: _movie_Movies__WEBPACK_IMPORTED_MODULE_4__["default"]
         })]
       })]
-    })
+    })]
   });
 }
 
@@ -2651,7 +2649,7 @@ function MovieFeatured() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "w-full h-96 bg-no-repeat mb-6 bg-cover rounded-xl",
       style: {
-        backgroundImage: "url(".concat(base_img_url).concat(featured.backdrop_path, ")")
+        backgroundImage: "url(".concat(featured !== null && featured !== void 0 && featured.backdrop_path && (featured === null || featured === void 0 ? void 0 : featured.backdrop_path) !== "undefined" ? base_img_url + featured.backdrop_path : "", ")")
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "ml-16 pt-52  w-2/5  h-40 cursor-pointer",
@@ -2670,7 +2668,7 @@ function MovieFeatured() {
       className: "grid lg:grid-cols-4 md:grid-cols-3 gap-10",
       children: movies.map(function (movie) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_MovieItems__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          imgPath: "".concat(base_img_url).concat(movie.poster_path),
+          imgPath: "".concat(movie.poster_path !== "undefined" ? base_img_url + movie.poster_path : "", " "),
           title: (movie === null || movie === void 0 ? void 0 : movie.title) || (movie === null || movie === void 0 ? void 0 : movie.name),
           description: movie.overview
         }, movie.id);
@@ -2860,7 +2858,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function MovieDetails() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "bg-white w-full lg:px-5 lg:w-1/3 mx-auto rounded-lg lg:my-20 px-4 py-4 shadow-lg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      className: "text-gray-700 font-bold text-4xl mb-4 text-center ",
+      children: "Movie Details"
+    })
+  });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MovieDetails);
@@ -3057,11 +3061,6 @@ function Plan() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
       className: "w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800",
       children: "Pricing"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "w-full mb-4",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"
-      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {

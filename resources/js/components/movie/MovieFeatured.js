@@ -40,7 +40,12 @@ function MovieFeatured() {
             <div
                 className="w-full h-96 bg-no-repeat mb-6 bg-cover rounded-xl"
                 style={{
-                    backgroundImage: `url(${base_img_url}${featured.backdrop_path})`,
+                    backgroundImage: `url(${
+                        featured?.backdrop_path &&
+                        featured?.backdrop_path !== "undefined"
+                            ? base_img_url + featured.backdrop_path
+                            : ""
+                    })`,
                 }}
             >
                 <div className="ml-16 pt-52  w-2/5  h-40 cursor-pointer">
@@ -58,7 +63,11 @@ function MovieFeatured() {
                 {movies.map((movie) => (
                     <MovieItems
                         key={movie.id}
-                        imgPath={`${base_img_url}${movie.poster_path}`}
+                        imgPath={`${
+                            movie.poster_path !== "undefined"
+                                ? base_img_url + movie.poster_path
+                                : ""
+                        } `}
                         title={movie?.title || movie?.name}
                         description={movie.overview}
                     />

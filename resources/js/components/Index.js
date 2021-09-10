@@ -13,23 +13,21 @@ import Payment from "./pages/Payment";
 
 function Index() {
     return (
-        <div>
-            <Router>
-                <Header />
-                <Switch>
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
-                    <Route path="/plan" exact component={Plan} />
-                    <Route path="/card/details" exact component={Payment} />
-                    <div>
-                        <Navbar />
-                        <Route path="/" exact component={MovieFeatured} />
-                        <Route path="/genre/:genre" component={Movies} />
-                        <Route path="/movie/:id" component={MovieDetails} />
-                    </div>
-                </Switch>
-            </Router>
-        </div>
+        <Router>
+            <Header />
+            <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/plan" exact component={Plan} />
+                <Route path="/card/details" exact component={Payment} />
+                <Route path="/movie/:id" component={MovieDetails} />
+                <div>
+                    <Navbar />
+                    <Route path="/" exact component={MovieFeatured} />
+                    <Route path="/genre/:genre" component={Movies} />
+                </div>
+            </Switch>
+        </Router>
     );
 }
 
