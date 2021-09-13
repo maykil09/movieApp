@@ -1,3 +1,4 @@
+import axios from "axios";
 import { map } from "jquery";
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
@@ -28,6 +29,28 @@ function UserList() {
         };
         getUsers();
     }, []);
+
+    const deleteUser = async (id) => {
+        // console.log(id);
+        const token = Cookies.get("token");
+        var config = {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        };
+        try {
+            const res = await axios.delete(
+                `http://127.0.0.1:8000/api/users/${id}`,
+                config
+            );
+            if (res.data.success) {
+                alert("User Deleted");
+                window.location.reload();
+            }
+        } catch (err) {}
+    };
     return (
         <div className="flex">
             <AdminSidebar />
@@ -106,8 +129,13 @@ function UserList() {
                         <tbody>
                             {users.map((user) => {
                                 return (
-                                    <tr className="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                        <td className="p-2 border-r">1</td>
+                                    <tr
+                                        key={user.id}
+                                        className="bg-gray-100 text-center border-b text-sm text-gray-600"
+                                    >
+                                        <td className="p-2 border-r">
+                                            {user.id}
+                                        </td>
                                         <td className="p-2 border-r">
                                             {`${user.firstName} ${user.lastName}`}
                                         </td>
@@ -126,12 +154,15 @@ function UserList() {
                                             >
                                                 Edit
                                             </a>
-                                            <a
+                                            <button
+                                                onClick={() =>
+                                                    deleteUser(user.id)
+                                                }
                                                 href="#"
                                                 className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin"
                                             >
                                                 Remove
-                                            </a>
+                                            </button>
                                         </td>
                                     </tr>
                                 );
