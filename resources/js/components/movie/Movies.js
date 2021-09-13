@@ -20,7 +20,14 @@ function Movies({ match }) {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(fetchUrl);
+            var config = {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                withCredentials: false,
+            };
+            const request = await axios.get(fetchUrl, config);
             setMovies(request.data.results);
             return request;
         }

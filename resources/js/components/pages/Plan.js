@@ -1,11 +1,12 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext } from "react";
+import { useHistory, Link } from "react-router-dom";
 
 function Plan() {
     const history = useHistory();
 
     const submitPlan = (e) => {
         e.preventDefault();
+        setAuth(true);
         return history.push("/card/details");
     };
 
@@ -33,17 +34,15 @@ function Plan() {
                     </div>
                     <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                            ₱300.00
+                            $10.00
                         </div>
-                        <div className="flex items-center justify-center">
-                            <form onSubmit={submitPlan}>
-                                <button
-                                    type="submit"
-                                    className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500"
-                                >
-                                    Buy
-                                </button>
-                            </form>
+                        <div className="flex items-center justify-center ">
+                            <Link
+                                className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500 block"
+                                to="/plan/price_1JYaDMJ8fYbNsfu1ziiBgDiZ"
+                            >
+                                Buy
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -66,17 +65,15 @@ function Plan() {
                     </div>
                     <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div className="w-full pt-6 text-4xl font-bold text-center">
-                            ₱500.00
+                            $20.00
                         </div>
                         <div className="flex items-center justify-center">
-                            <form onSubmit={submitPlan}>
-                                <button
-                                    type="submit"
-                                    className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500"
-                                >
-                                    Buy
-                                </button>
-                            </form>
+                            <Link
+                                className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500 block"
+                                to="/plan/price_1JYaDMJ8fYbNsfu1t4Vfuusb"
+                            >
+                                Buy
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -101,17 +98,15 @@ function Plan() {
                     </div>
                     <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                            ₱999.00
+                            $30.00
                         </div>
                         <div className="flex items-center justify-center">
-                            <form onSubmit={submitPlan}>
-                                <button
-                                    type="submit"
-                                    className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500"
-                                >
-                                    Buy
-                                </button>
-                            </form>
+                            <Link
+                                className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg bg-blue-500 block"
+                                to="/plan/price_1JYaDMJ8fYbNsfu1ilql0iDi"
+                            >
+                                Buy
+                            </Link>
                         </div>
                     </div>
                 </div>

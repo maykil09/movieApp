@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Cookies from "js-cookie";
 
 function Register() {
     const [firstName, setFirstName] = useState("");
@@ -8,17 +9,55 @@ function Register() {
     const [passwordRepeat, setPasswordRepeat] = useState("");
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const submitRegistration = (e) => {
+    const submitRegistration = async (e) => {
         e.preventDefault();
         setIsSubmit(true);
-        let newUser = {
-            firstName,
-            lastName,
-            email,
-            password,
-            passwordRepeat,
-        };
-        console.log(newUser);
+
+        if (password === passwordRepeat) {
+            let newUser = {
+                firstName,
+                lastName,
+                email,
+                role: 0,
+                password,
+            };
+            console.log(newUser);
+            try {
+                var config = {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                };
+                const response = await axios.post(
+                    "/api/users",
+                    newUser,
+                    config
+                );
+                console.log(response);
+
+                if (response.data.success) {
+                    Cookies.set("token", response.data.token);
+                    Cookies.set("user_id", response.data.user.id);
+                    Cookies.set("email", response.data.user.email);
+                    Cookies.set("isAdmin", response.data.user.role);
+                    if (
+                        response.data.user.stripe_id === null ||
+                        !response.data.user.stripe_id
+                    ) {
+                        console.log(" ");
+                    } else {
+                        Cookies.set("st_id", response.data.user.stripe_id);
+                    }
+                    window.location.reload();
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            alert("Password dont match");
+            setIsSubmit(false);
+        }
     };
 
     return (
